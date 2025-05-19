@@ -47,6 +47,7 @@
 
 ## Project Structure
 
+**```text
 Freight_Flow/
 ├── app.py                 # Main Streamlit app
 ├── backend/               # Agents and backend logic
@@ -58,10 +59,10 @@ Freight_Flow/
 │       ├── emission.py
 │       └── …
 ├── data/                  # Hazard and other data files (can be .gitignored for privacy)
-├── requirements.txt
-├── .env.example
-└── README.md
-
+├── requirements.txt       # Lists all Python dependencies
+├── .env.example           # Example file for environment variables
+└── README.md              # This file
+**
 
 
 
