@@ -156,31 +156,6 @@ Freight_Flow/
 
 ---
 
-## Extending Freight_Flow
-
-Adding a new optimisation criterion is as simple as writing a **single Python class**:
-
-```python
-# backend/agents/green_time.py
-from .base_agent import BaseAgent
-
-class GreenTimeAgent(BaseAgent):
-    """Penalise routes that pass through school zones during active hours."""
-    name = "GreenTime"
-
-    def score(self, route, context):
-        penalty = 0
-        for segment in route.segments:
-            if segment.in_school_zone and context.time_in_school_hours(segment):
-                penalty += 10
-        return -penalty  # lower is better
-```
-
-1. Drop the file into `backend/agents/`.  
-2. Add `"GreenTimeAgent"` to `config.py -> ENABLED_AGENTS`.  
-3. Restart the app—no other code changes needed.
-
----
 
 ## Contributing
 
